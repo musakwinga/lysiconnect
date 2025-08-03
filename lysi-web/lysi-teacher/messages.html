@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Messages - LYSI Teacher Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="lys">LYS</span><span class="i">I</span>
+        <span class="role">Teacher Portal</span>
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="classes.html"><i class="fas fa-users-class"></i> My Classes</a></li>
+          <li><a href="attendance.html"><i class="fas fa-clipboard-check"></i> Attendance</a></li>
+          <li><a href="gradebook.html"><i class="fas fa-book-open"></i> Gradebook</a></li>
+          <li class="active"><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+        </ul>
+      </nav>
+      <div class="user-profile">
+        <img src="assets/teacher-profile.jpg" alt="Teacher Profile">
+        <div class="user-info">
+          <span class="name">Ms. Sarah Johnson</span>
+          <span class="subject">Mathematics</span>
+        </div>
+        <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i></a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="admin-name">Messages</div>
+        <div class="date" id="current-date">August 3, 2025</div>
+      </header>
+
+      <section class="dashboard-cards messages-section">
+        <!-- Incoming Messages -->
+        <div class="card">
+          <div class="card-header">
+            <h2>Inbox</h2>
+          </div>
+          <div class="message-list">
+            <div class="message-item">
+              <h3>Reminder: Staff Meeting</h3>
+              <p><strong>From:</strong> Principal Smith</p>
+              <p><strong>Date:</strong> Aug 2, 2025</p>
+              <p>Please confirm attendance for the Friday meeting at 3:00 PM in the boardroom.</p>
+            </div>
+            <div class="message-item">
+              <h3>Student Update - Grace Muthoni</h3>
+              <p><strong>From:</strong> Parent (Grace's Mother)</p>
+              <p><strong>Date:</strong> Aug 1, 2025</p>
+              <p>Thank you for the support. Grace will be out of school until Monday due to a family matter.</p>
+            </div>
+            <div class="message-item">
+              <h3>End of Term Guidelines</h3>
+              <p><strong>From:</strong> School Administrator</p>
+              <p><strong>Date:</strong> July 30, 2025</p>
+              <p>Ensure all grades are submitted to the portal before the term ends.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Send Message -->
+        <div class="card">
+          <div class="card-header">
+            <h2>Send Message to Parent</h2>
+          </div>
+          <form id="send-message-form" class="form">
+            <label for="student">Select Student:</label>
+            <select id="student" required>
+              <option value="">--Choose--</option>
+              <option value="grace">Grace Muthoni</option>
+              <option value="james">James Otieno</option>
+              <option value="ali">Ali Yusuf</option>
+            </select>
+
+            <label for="message">Your Message:</label>
+            <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const dateSpan = document.getElementById('current-date');
+    const today = new Date().toLocaleDateString('en-US', {
+      year: 'numeric', month: 'long', day: 'numeric'
+    });
+    dateSpan.textContent = today;
+
+    document.getElementById('send-message-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("Message sent successfully!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>

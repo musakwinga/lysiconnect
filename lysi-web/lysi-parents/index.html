@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LYSI - Parent Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="lys">LYS</span><span class="i">I</span>
+                <span class="role">Parent Portal</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active"><a href="index.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="children.html"><i class="fas fa-child"></i> My Children</a></li>
+                    <li><a href="attendance.html"><i class="fas fa-clipboard-check"></i> Attendance</a></li>
+                    <li><a href="grades.html"><i class="fas fa-graduation-cap"></i> Grades</a></li>
+                    <li><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                    <li><a href="calendar.html"><i class="fas fa-calendar-alt"></i> Calendar</a></li>
+                    <li><a href="fees.html"><i class="fas fa-money-bill-wave"></i> Fee Payments</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <img src="assets/parent-profile.jpg" alt="Parent Profile">
+                <div class="user-info">
+                    <span class="name">Mr. David Wilson</span>
+                    <span class="email">d.wilson@email.com</span>
+                </div>
+                <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Parent Dashboard</h1>
+                <div class="header-actions">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">2</span>
+                    </div>
+                    <div class="date-display">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span id="current-date">June 15, 2023</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Children Summary -->
+                <div class="card children-card">
+                    <div class="card-header">
+                        <h2>My Children</h2>
+                        <a href="children.html" class="view-all">View All</a>
+                    </div>
+                    <div class="children-list">
+                        <div class="child-item">
+                            <img src="assets/student1.jpg" alt="Emily Wilson" class="child-photo">
+                            <div class="child-info">
+                                <h3>Emily Wilson</h3>
+                                <p class="grade">Grade 5</p>
+                                <div class="child-status">
+                                    <span class="status attendance"><i class="fas fa-check-circle"></i> Present Today</span>
+                                    <span class="status grades"><i class="fas fa-star"></i> 94% Average</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="child-item">
+                            <img src="assets/student2.jpg" alt="Michael Wilson" class="child-photo">
+                            <div class="child-info">
+                                <h3>Michael Wilson</h3>
+                                <p class="grade">Grade 8</p>
+                                <div class="child-status">
+                                    <span class="status attendance"><i class="fas fa-exclamation-circle"></i> Absent Today</span>
+                                    <span class="status grades"><i class="fas fa-star"></i> 87% Average</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Events -->
+                <div class="card events-card">
+                    <div class="card-header">
+                        <h2>Upcoming Events</h2>
+                        <a href="calendar.html" class="view-all">View All</a>
+                    </div>
+                    <div class="events-list">
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">18</span>
+                                <span class="month">JUN</span>
+                            </div>
+                            <div class="event-details">
+                                <h3>Parent-Teacher Conference</h3>
+                                <p><i class="fas fa-clock"></i> 3:00 PM - 5:00 PM</p>
+                                <p><i class="fas fa-map-marker-alt"></i> School Conference Room</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline">RSVP</button>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">
+                                <span class="day">25</span>
+                                <span class="month">JUN</span>
+                            </div>
+                            <div class="event-details">
+                                <h3>End of Term Celebration</h3>
+                                <p><i class="fas fa-clock"></i> 10:00 AM - 1:00 PM</p>
+                                <p><i class="fas fa-map-marker-alt"></i> School Auditorium</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline">Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Announcements -->
+                <div class="card announcements-card">
+                    <div class="card-header">
+                        <h2>School Announcements</h2>
+                    </div>
+                    <div class="announcements-list">
+                        <div class="announcement-item">
+                            <h3>Summer Break Schedule</h3>
+                            <p class="announcement-meta">Posted by Principal Smith on June 12</p>
+                            <p>The school will be closed for summer break from July 1st to August 31st. The new academic year begins September 5th.</p>
+                        </div>
+                        <div class="announcement-item">
+                            <h3>New School App Launch</h3>
+                            <p class="announcement-meta">Posted by Admin on June 5</p>
+                            <p>We're excited to announce our new mobile app for parents. Download it from the App Store or Google Play.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Grades -->
+                <div class="card grades-card">
+                    <div class="card-header">
+                        <h2>Recent Grades</h2>
+                        <a href="grades.html" class="view-all">View All</a>
+                    </div>
+                    <div class="grades-list">
+                        <div class="grade-item">
+                            <div class="grade-info">
+                                <h3>Emily Wilson - Mathematics</h3>
+                                <p>Algebra Test - June 10</p>
+                            </div>
+                            <div class="grade-value">
+                                <span class="score">92%</span>
+                                <span class="grade-letter">A</span>
+                            </div>
+                        </div>
+                        <div class="grade-item">
+                            <div class="grade-info">
+                                <h3>Michael Wilson - Science</h3>
+                                <p>Biology Project - June 8</p>
+                            </div>
+                            <div class="grade-value">
+                                <span class="score">85%</span>
+                                <span class="grade-letter">B+</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fee Status -->
+                <div class="card fees-card">
+                    <div class="card-header">
+                        <h2>Fee Status</h2>
+                        <a href="fees.html" class="view-all">View All</a>
+                    </div>
+                    <div class="fees-summary">
+                        <div class="fee-item">
+                            <h3>Emily Wilson - Term 3 Fees</h3>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 100%"></div>
+                                <span>Paid - $350.00</span>
+                            </div>
+                        </div>
+                        <div class="fee-item">
+                            <h3>Michael Wilson - Term 3 Fees</h3>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 75%"></div>
+                                <span>$262.50/$350.00</span>
+                            </div>
+                            <button class="btn btn-sm btn-primary">Pay Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="card links-card">
+                    <div class="card-header">
+                        <h2>Quick Links</h2>
+                    </div>
+                    <div class="quick-links">
+                        <a href="#" class="link-item">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>School Handbook</span>
+                        </a>
+                        <a href="#" class="link-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>Lunch Menu</span>
+                        </a>
+                        <a href="#" class="link-item">
+                            <i class="fas fa-bus"></i>
+                            <span>Transportation</span>
+                        </a>
+                        <a href="#" class="link-item">
+                            <i class="fas fa-tshirt"></i>
+                            <span>Uniform Policy</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

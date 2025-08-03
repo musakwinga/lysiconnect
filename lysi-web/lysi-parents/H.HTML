@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LYSI Logo</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f7fa;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .logo-container {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4361ee, #3f37c9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .logo .dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #4cc9f0;
+            border-radius: 50%;
+            bottom: 5px;
+            right: -15px;
+        }
+        
+        .tagline {
+            color: #495057;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+        
+        /* Alternative color scheme */
+        .logo.alternate {
+            background: linear-gradient(135deg, #7209b7, #3a0ca3);
+        }
+        
+        .logo.alternate .dot {
+            background: #f72585;
+        }
+        
+        /* Minimalist version */
+        .logo.minimalist {
+            background: #4361ee;
+            color: #4361ee;
+            -webkit-text-stroke: 2px #4361ee;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .logo.minimalist .dot {
+            background: #4361ee;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <!-- Primary Logo Version -->
+        <div class="logo">LYSI<span class="dot"></span></div>
+        <div class="tagline">Learning Your Success Interface</div>
+    </div>
+</body>
+</html>

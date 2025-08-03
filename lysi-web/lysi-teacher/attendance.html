@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Attendance - LYSI Teacher Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="lys">LYS</span><span class="i">I</span>
+        <span class="role">Teacher Portal</span>
+      </div>
+      <nav class="nav-menu">
+        <ul>
+          <li><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="classes.html"><i class="fas fa-users-class"></i> My Classes</a></li>
+          <li class="active"><a href="attendance.html"><i class="fas fa-clipboard-check"></i> Attendance</a></li>
+          <li><a href="gradebook.html"><i class="fas fa-book-open"></i> Gradebook</a></li>
+          <li><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+        </ul>
+      </nav>
+      <div class="user-profile">
+        <img src="assets/teacher-profile.jpg" alt="Teacher Profile">
+        <div class="user-info">
+          <span class="name">Ms. Sarah Johnson</span>
+          <span class="subject">Mathematics</span>
+        </div>
+        <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i></a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="topbar">
+        <div class="admin-name">Take Attendance</div>
+        <div class="date" id="current-date">August 3, 2025</div>
+      </header>
+
+      <section class="dashboard-cards">
+        <div class="card">
+          <h3>Grade 9 Mathematics - Room 205</h3>
+          <form id="attendance-form">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Student Name</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>James Otieno</td>
+                  <td>
+                    <select>
+                      <option>Present</option>
+                      <option>Absent</option>
+                      <option>Late</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Grace Muthoni</td>
+                  <td>
+                    <select>
+                      <option>Present</option>
+                      <option>Absent</option>
+                      <option>Late</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Ali Yusuf</td>
+                  <td>
+                    <select>
+                      <option>Present</option>
+                      <option>Absent</option>
+                      <option>Late</option>
+                    </select>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button type="submit" class="btn btn-primary">Submit Attendance</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const dateSpan = document.getElementById('current-date');
+    const today = new Date().toLocaleDateString('en-US', {
+      year: 'numeric', month: 'long', day: 'numeric'
+    });
+    dateSpan.textContent = today;
+
+    document.getElementById('attendance-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Attendance submitted successfully!');
+    });
+  </script>
+</body>
+</html>

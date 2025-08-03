@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BioPortal - LYSI Connect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0fdf4;
+    }
+
+    nav {
+      background-color: #ffffff;
+      padding: 15px 30px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #2962ff;
+    }
+
+    .logo span {
+      color: #00e5ff;
+    }
+
+    nav .nav-links a {
+      text-decoration: none;
+      color: #37474f;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav .nav-links a:hover {
+      color: #2962ff;
+    }
+
+    .hero {
+      padding: 60px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #2962ff;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      color: #455a64;
+      font-size: 1.1rem;
+    }
+
+    .form-box {
+      max-width: 500px;
+      margin: 30px auto;
+      background: white;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      animation: slideUp 0.7s ease;
+    }
+
+    .form-box h2 {
+      margin-bottom: 25px;
+      color: #2e7d32;
+    }
+
+    .form-box input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .form-box button {
+      width: 100%;
+      padding: 12px;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .form-box button:hover {
+      background-color: #43a047;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 20px;
+      color: #607d8b;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">LYSI Connect<span>.</span></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="school.html">School</a>
+      <a href="#">Support</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h1>BioPortal Access</h1>
+    <p>Student Registration for Fingerprint Enrollment</p>
+  </div>
+
+  <!-- Registration Form -->
+  <div class="form-box">
+    <h2>Student Information</h2>
+    <form onsubmit="registerStudent(event)">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="text" id="admission" placeholder="Admission Number" required />
+      <button type="submit">Continue to Fingerprint Enrollment</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 LYSI Connect. All rights reserved.
+  </footer>
+
+  <script>
+    function registerStudent(event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const admission = document.getElementById("admission").value;
+
+      // Store the student data (you can replace this with backend storage)
+      const studentData = {
+        fullName: name,
+        admissionNumber: admission
+      };
+      
+      // In a real implementation, you would:
+      // 1. Save the student data to your database
+      // 2. Redirect to fingerprint enrollment page with the student ID
+      console.log("Student registered:", studentData);
+      alert(`Student registered successfully!\n\nProceeding to fingerprint enrollment for:\nName: ${name}\nAdmission: ${admission}`);
+      
+      // Reset form
+      document.querySelector("form").reset();
+      
+      // Here you would typically redirect to fingerprint enrollment:
+      // window.location.href = "fingerprint-enrollment.html?admission=" + admission;
+    }
+  </script>
+</body>
+</html>

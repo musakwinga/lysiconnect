@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Messages - Admin Dashboard</title>
+  <link rel="stylesheet" href="css/style.css"> <!-- Adjust path if needed -->
+  <style>
+    .message-container {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .message-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .message-form select,
+    .message-form textarea,
+    .message-form button {
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid var(--gray-medium);
+      font-size: 1rem;
+    }
+
+    .message-form textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .message-form button {
+      background-color: var(--primary-color);
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+    }
+
+    .message-form button:hover {
+      background-color: var(--primary-dark);
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">Greenhill Admin</div>
+      <ul class="nav">
+        <li><a href="index.html"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+        <li><a href="students.html"><i class="fas fa-user-graduate"></i> <span>Students</span></a></li>
+        <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> <span>Teachers</span></a></li>
+        <li><a href="classes.html"><i class="fas fa-door-open"></i> <span>Classes</span></a></li>
+        <li class="active"><a href="messages.html"><i class="fas fa-envelope"></i> <span>Messages</span></a></li>
+        <li><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="topbar">
+        <div class="admin-name">Welcome, Admin</div>
+        <div class="date" id="date"></div>
+      </div>
+
+      <h2>Send Message</h2>
+
+      <div class="message-container">
+        <form class="message-form">
+          <select required>
+            <option value="">-- Select Recipient Group --</option>
+            <option value="all-students">All Students</option>
+            <option value="all-teachers">All Teachers</option>
+            <option value="all-parents">All Parents</option>
+            <option value="custom">Custom Recipient</option>
+          </select>
+          <textarea placeholder="Type your message here..." required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    document.getElementById("date").textContent = new Date().toDateString();
+  </script>
+</body>
+</html>

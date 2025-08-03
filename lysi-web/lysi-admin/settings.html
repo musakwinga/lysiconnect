@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Settings - LYSI Connect</title>
+  <link rel="stylesheet" href="css/style.css"> <!-- Adjust path as needed -->
+</head>
+<body>
+  <div class="admin-container">
+    <aside class="sidebar">
+      <div class="logo">LYSI Connect</div>
+      <ul class="nav">
+        <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+        <li><a href="students.html"><i class="fas fa-user-graduate"></i><span>Students</span></a></li>
+        <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i><span>Teachers</span></a></li>
+        <li><a href="messages.html"><i class="fas fa-envelope"></i><span>Messages</span></a></li>
+        <li class="active"><a href="settings.html"><i class="fas fa-cogs"></i><span>Settings</span></a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="topbar">
+        <div class="admin-name">Admin Settings</div>
+        <div class="date" id="current-date"></div>
+      </div>
+
+      <section class="dashboard-cards">
+        <div class="card">
+          <div class="icon"><i class="fas fa-key"></i></div>
+          <h3>Change Password</h3>
+          <p><button onclick="openPasswordModal()">Update</button></p>
+        </div>
+
+        <div class="card">
+          <div class="icon"><i class="fas fa-database"></i></div>
+          <h3>Backup Database</h3>
+          <p><button onclick="alert('Backup process initiated.')">Start</button></p>
+        </div>
+
+        <div class="card">
+          <div class="icon"><i class="fas fa-user-shield"></i></div>
+          <h3>Manage Roles</h3>
+          <p><button onclick="alert('Redirecting to role management...')">Go</button></p>
+        </div>
+
+        <div class="card">
+          <div class="icon"><i class="fas fa-tools"></i></div>
+          <h3>System Preferences</h3>
+          <p><button onclick="alert('Open system preferences...')">Open</button></p>
+        </div>
+      </section>
+
+      <!-- Modal for Password Change (optional functionality) -->
+      <div id="passwordModal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:#fff; padding:30px; border-radius:10px; box-shadow:0 0 15px rgba(0,0,0,0.3); z-index:999;">
+        <h3 style="margin-bottom:15px;">Change Password</h3>
+        <input type="password" placeholder="Old Password" style="width:100%; margin-bottom:10px; padding:10px;">
+        <input type="password" placeholder="New Password" style="width:100%; margin-bottom:10px; padding:10px;">
+        <button onclick="alert('Password changed')" style="background:var(--primary-color); color:#fff; padding:10px 20px; border:none; border-radius:6px; cursor:pointer;">Update</button>
+        <button onclick="document.getElementById('passwordModal').style.display='none'" style="margin-left:10px; padding:10px 20px; border:none;">Cancel</button>
+      </div>
+
+      <script>
+        function openPasswordModal() {
+          document.getElementById('passwordModal').style.display = 'block';
+        }
+
+        document.getElementById("current-date").textContent = new Date().toDateString();
+      </script>
+    </main>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a2d9d6b3c3.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Students - Admin Dashboard</title>
+  <link rel="stylesheet" href="css/style.css"> <!-- Adjust path if needed -->
+  <style>
+    .table-container {
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      overflow-x: auto;
+    }
+
+    .student-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .student-table th, .student-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid var(--gray-light);
+      text-align: left;
+    }
+
+    .student-table th {
+      background-color: var(--gray-light);
+      color: var(--dark-color);
+      font-weight: 600;
+    }
+
+    .student-table tr:hover {
+      background-color: rgba(67, 97, 238, 0.05);
+    }
+
+    .search-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 10px 15px;
+      border: 1px solid var(--gray-medium);
+      border-radius: 6px;
+      outline: none;
+    }
+
+    .btn-add {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .btn-add:hover {
+      background-color: var(--primary-dark);
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">Greenhill Admin</div>
+      <ul class="nav">
+        <li><a href="index.html"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+        <li class="active"><a href="students.html"><i class="fas fa-user-graduate"></i> <span>Students</span></a></li>
+        <li><a href="teachers.html"><i class="fas fa-chalkboard-teacher"></i> <span>Teachers</span></a></li>
+        <li><a href="classes.html"><i class="fas fa-door-open"></i> <span>Classes</span></a></li>
+        <li><a href="messages.html"><i class="fas fa-envelope"></i> <span>Messages</span></a></li>
+        <li><a href="settings.html"><i class="fas fa-cog"></i> <span>Settings</span></a></li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="topbar">
+        <div class="admin-name">Welcome, Admin</div>
+        <div class="date" id="date"></div>
+      </div>
+
+      <h2>Student Records</h2>
+
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Search by name, class, or ID...">
+        <button class="btn-add" onclick="alert('Add student logic goes here')">+ Add Student</button>
+      </div>
+
+      <div class="table-container">
+        <table class="student-table" id="studentTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Full Name</th>
+              <th>Class</th>
+              <th>Gender</th>
+              <th>Parent Contact</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Example static row -->
+            <tr>
+              <td>ST001</td>
+              <td>Jane Mwangi</td>
+              <td>Grade 6</td>
+              <td>Female</td>
+              <td>0712345678</td>
+              <td>
+                <button onclick="alert('View student')">View</button>
+                <button onclick="alert('Edit student')">Edit</button>
+                <button onclick="alert('Delete student')">Delete</button>
+              </td>
+            </tr>
+            <!-- JS will populate this -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Font Awesome (for icons) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- Date script -->
+  <script>
+    document.getElementById("date").textContent = new Date().toDateString();
+  </script>
+
+  <!-- Search logic -->
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const tableRows = document.querySelectorAll('#studentTable tbody tr');
+
+    searchInput.addEventListener('keyup', function () {
+      const term = this.value.toLowerCase();
+      tableRows.forEach(row => {
+        const text = row.textContent.toLowerCase();
+        row.style.display = text.includes(term) ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>

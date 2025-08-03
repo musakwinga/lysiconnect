@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grades Portal | Parent Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="main-content">
+    <div class="header fade-in">
+      <h1>Grades Portal</h1>
+      <div class="header-actions">
+        <div class="date-display">
+          <i class="fas fa-calendar-alt"></i>
+          <span id="current-date">--</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card fade-in">
+      <div class="card-header">
+        <h2>View Grades</h2>
+      </div>
+      <form id="grade-filter-form" class="filter-form">
+        <div class="form-group">
+          <label for="term">Select Term</label>
+          <select id="term" required>
+            <option value="Term 1">Term 1</option>
+            <option value="Term 2">Term 2</option>
+            <option value="Term 3">Term 3</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="year">Academic Year</label>
+          <input type="number" id="year" value="2025" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Load Grades</button>
+      </form>
+    </div>
+
+    <div class="card fade-in" id="grades-section">
+      <div class="card-header">
+        <h2>Grades</h2>
+      </div>
+      <table class="grades-table">
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Grade</th>
+            <th>Remarks</th>
+          </tr>
+        </thead>
+        <tbody id="grades-body">
+          <!-- JS injected rows -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

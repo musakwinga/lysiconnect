@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parent Messaging</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="main-content">
+    <div class="header fade-in">
+      <h1>Messaging</h1>
+      <div class="header-actions">
+        <div class="date-display">
+          <i class="fas fa-calendar-alt"></i>
+          <span id="current-date">--</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Compose Message -->
+    <div class="card fade-in">
+      <div class="card-header">
+        <h2>Send a Message</h2>
+      </div>
+      <form id="message-form" class="message-form">
+        <div class="form-group">
+          <label for="teacher">Select Teacher</label>
+          <select id="teacher" required>
+            <option value="">Choose</option>
+            <option value="Mr. Kipkoech">Mr. Kipkoech</option>
+            <option value="Ms. Achieng">Ms. Achieng</option>
+            <option value="Mr. Mwangi">Mr. Mwangi</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" rows="4" placeholder="Write your message here..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm">Send Message</button>
+      </form>
+    </div>
+
+    <!-- Inbox -->
+    <div class="card fade-in">
+      <div class="card-header">
+        <h2>Inbox</h2>
+      </div>
+      <div id="inbox-list" class="inbox-list">
+        <!-- JS-rendered messages -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

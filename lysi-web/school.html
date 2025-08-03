@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LYSI Connect - Select School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --green: #4caf50;
+      --white: #fff;
+      --dark: #1c1c1c;
+      --gray: #f1f1f1;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--gray);
+      color: var(--dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: var(--white);
+      padding: 20px 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .hero {
+      padding: 60px 20px 30px;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .school-selector {
+      max-width: 400px;
+      margin: 40px auto;
+      background: var(--white);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      animation: slideIn 0.8s ease;
+    }
+
+    select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background: var(--green);
+      color: var(--white);
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    button:hover {
+      background: #3d8b42;
+    }
+
+    .error {
+      margin-top: 15px;
+      color: red;
+      font-weight: bold;
+      display: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--white);
+      box-shadow: 0 -4px 12px rgba(0,0,0,0.04);
+      margin-top: auto;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">LYSI<span style="color:#1c1c1c">Connect</span></div>
+    <a href="index.html" style="text-decoration:none; color:#4caf50;">← Back Home</a>
+  </header>
+
+  <section class="hero">
+    <h1>Select Your School</h1>
+    <p>Choose your institution to continue to login</p>
+  </section>
+
+  <div class="school-selector">
+    <select id="schoolSelect">
+      <option value="">-- Select School --</option>
+      <option value="greenhill">Greenhill Academy</option>
+      <option value="lysiacademy">LYSI Academy</option>
+      <option value="stfrancis">St. Francis High</option>
+    </select>
+    <button onclick="goToSchool()">Continue</button>
+    <div class="error" id="errorMsg">School not recognized. Contact admin.</div>
+  </div>
+
+  <footer>
+    &copy; 2025 LYSI Connect · School Selection
+  </footer>
+
+  <script>
+    function goToSchool() {
+      const school = document.getElementById("schoolSelect").value;
+      const errorMsg = document.getElementById("errorMsg");
+
+      if (!school) {
+        errorMsg.textContent = "Please select a school";
+        errorMsg.style.display = "block";
+        return;
+      }
+
+      // Map schools to their login dashboards
+      const schoolPortals = {
+        greenhill: "greenhill-portal.html",
+        lysiacademy: "lysiacademy-portal.html",
+        stfrancis: "stfrancis-portal.html"
+      };
+
+      if (schoolPortals[school]) {
+        window.location.href = schoolPortals[school];
+      } else {
+        errorMsg.textContent = "School not recognized. Contact admin.";
+        errorMsg.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>

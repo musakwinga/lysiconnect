@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LYSI - Teacher Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="lys">LYS</span><span class="i">I</span>
+                <span class="role">Teacher Portal</span>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li class="active"><a href="index.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                    <li><a href="classes.html"><i class="fas fa-users-class"></i> My Classes</a></li>
+                    <li><a href="attendance.html"><i class="fas fa-clipboard-check"></i> Attendance</a></li>
+                    <li><a href="gradebook.html"><i class="fas fa-book-open"></i> Gradebook</a></li>
+                    <li><a href="messages.html"><i class="fas fa-envelope"></i> Messages</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <img src="assets/teacher-profile.jpg" alt="Teacher Profile">
+                <div class="user-info">
+                    <span class="name">Ms. Sarah Johnson</span>
+                    <span class="subject">Mathematics</span>
+                </div>
+                <a href="#" class="logout"><i class="fas fa-sign-out-alt"></i></a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Teacher Dashboard</h1>
+                <div class="header-actions">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="date-display">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span id="current-date">June 15, 2023</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Quick Stats -->
+                <div class="card stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Students</h3>
+                        <p class="stat-value">142</p>
+                    </div>
+                </div>
+
+                <div class="card stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Classes</h3>
+                        <p class="stat-value">5</p>
+                    </div>
+                </div>
+
+                <div class="card stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Pending Grades</h3>
+                        <p class="stat-value">24</p>
+                    </div>
+                </div>
+
+                <div class="card stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Unread Messages</h3>
+                        <p class="stat-value">5</p>
+                    </div>
+                </div>
+
+                <!-- Upcoming Classes -->
+                <div class="card schedule-card">
+                    <div class="card-header">
+                        <h2>Today's Classes</h2>
+                        <a href="classes.html" class="view-all">View All</a>
+                    </div>
+                    <div class="schedule-list">
+                        <div class="schedule-item">
+                            <div class="class-time">08:00 - 09:30</div>
+                            <div class="class-info">
+                                <h3>Grade 9 Mathematics</h3>
+                                <p>Room 205</p>
+                            </div>
+                            <button class="btn btn-sm btn-primary">Take Attendance</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="class-time">10:00 - 11:30</div>
+                            <div class="class-info">
+                                <h3>Grade 10 Mathematics</h3>
+                                <p>Room 210</p>
+                            </div>
+                            <button class="btn btn-sm btn-primary">Take Attendance</button>
+                        </div>
+                        <div class="schedule-item">
+                            <div class="class-time">13:00 - 14:30</div>
+                            <div class="class-info">
+                                <h3>Grade 8 Mathematics</h3>
+                                <p>Room 201</p>
+                            </div>
+                            <button class="btn btn-sm btn-primary">Take Attendance</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Announcements -->
+                <div class="card announcements-card">
+                    <div class="card-header">
+                        <h2>School Announcements</h2>
+                    </div>
+                    <div class="announcements-list">
+                        <div class="announcement-item">
+                            <h3>Staff Meeting - June 18</h3>
+                            <p class="announcement-meta">Posted by Principal Smith on June 14</p>
+                            <p>All teaching staff are required to attend the monthly staff meeting next Monday at 3:30 PM in the conference room.</p>
+                        </div>
+                        <div class="announcement-item">
+                            <h3>End of Term Reports</h3>
+                            <p class="announcement-meta">Posted by Admin on June 10</p>
+                            <p>Please submit all end-of-term grades and reports by June 25th. The grading portal will close at 5:00 PM.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grade Submission Reminder -->
+                <div class="card reminder-card">
+                    <div class="card-header">
+                        <h2>Pending Assessments</h2>
+                    </div>
+                    <div class="reminder-list">
+                        <div class="reminder-item">
+                            <h3>Grade 9 - Algebra Test</h3>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 65%"></div>
+                                <span>13/20 graded</span>
+                            </div>
+                            <button class="btn btn-sm btn-primary">Complete Grading</button>
+                        </div>
+                        <div class="reminder-item">
+                            <h3>Grade 10 - Geometry Assignment</h3>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: 30%"></div>
+                                <span>6/20 graded</span>
+                            </div>
+                            <button class="btn btn-sm btn-primary">Complete Grading</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
