@@ -303,3 +303,98 @@ a {
 .btn-view { background: var(--primary-color); color: #fff; }
 .btn-edit { background: var(--warning-color); color: #fff; }
 .btn-delete { background: var(--danger-color); color: #fff; }
+
+/* ====== Responsive Enhancements ====== */
+
+/* For tablets and small laptops */
+@media (max-width: 768px) {
+  /* Search bar stacks vertically */
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar input,
+  .btn-add {
+    width: 100%;
+  }
+
+  /* Table scrolls better */
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .class-table th,
+  .class-table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* For mobile phones */
+@media (max-width: 576px) {
+  /* Sidebar becomes overlay */
+  .sidebar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    left: -200px;
+    top: 0;
+    transition: left 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 1rem;
+  }
+
+  /* Table turns into block cards for readability */
+  .class-table,
+  .class-table thead,
+  .class-table tbody,
+  .class-table th,
+  .class-table td,
+  .class-table tr {
+    display: block;
+    width: 100%;
+  }
+
+  .class-table thead {
+    display: none; /* Hide header row */
+  }
+
+  .class-table tr {
+    margin-bottom: 1rem;
+    border: 1px solid var(--gray-light);
+    border-radius: 6px;
+    padding: 0.8rem;
+    background: #fff;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  }
+
+  .class-table td {
+    border: none;
+    padding: 8px 0;
+    position: relative;
+    padding-left: 50%;
+    font-size: 0.9rem;
+  }
+
+  .class-table td::before {
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    width: 45%;
+    white-space: nowrap;
+    font-weight: bold;
+    color: var(--gray-dark);
+    content: attr(data-label);
+  }
+}
+
